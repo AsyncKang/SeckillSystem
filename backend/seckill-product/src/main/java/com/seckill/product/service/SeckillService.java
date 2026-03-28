@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.Instant;
-import java.util.concurrent.*;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -129,23 +128,5 @@ public class SeckillService {
         String key = STOCK_KEY + activityId;
         String v = redis.opsForValue().get(key);
         return v == null ? null : Integer.parseInt(v);
-    }
-
-    public static void main(String[] args) {
-
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
-                3, 5, 1, TimeUnit.SECONDS, new ArrayBlockingQueue<>(2),
-                Executors.defaultThreadFactory(), new ThreadPoolExecutor.CallerRunsPolicy()
-        );
-        for (int i = 0; i < 8; i++) {
-            threadPoolExecutor.execute(()->{
-                try {
-                    Thread.sleep(1000*10);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                System.out.println(Thread.currentThread().getName());
-            });
-        }
     }
 }

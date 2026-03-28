@@ -20,8 +20,6 @@ dist-ssr/
 .env
 .env.local
 
-# Stray compile output accidentally placed under backend/
+# 误放在 backend 根目录的 class / 误拷入的本地 Maven 仓库（勿提交）
 backend/*.class
-
-# Misplaced local Maven repository (Windows path copied as folder name)
 backend/D*maven*/
