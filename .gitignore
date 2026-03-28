@@ -1,0 +1,27 @@
+# Maven
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+
+# Node / Vue
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+
+# Env
+.env
+.env.local
+
+# Stray compile output accidentally placed under backend/
+backend/*.class
+
+# Misplaced local Maven repository (Windows path copied as folder name)
+backend/D*maven*/

@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: seckill-user
+  datasource:
+    url: jdbc:mysql://localhost:3306/seckill_user?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+app:
+  jwt:
+    secret: seckill-jwt-secret-change-in-production-min-256bits
+    expiration-ms: 86400000
+    header: Authorization
+    prefix: "Bearer "
